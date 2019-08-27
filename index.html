@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href='https://fonts.googleapis.com/css?family=Antic Slab' rel='stylesheet'>
+		<link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet'>
+
+		<title>Anish - A Tech Enthusiast</title>
+		<style>
+
+			html, body {
+			    margin: 0;
+			    padding: 0;
+			    font-size: 16px;
+			} 
+			#outer
+			{
+				display:flex;
+				flex-direction: column;
+			}
+			.header
+			{
+				background-color:#266da8;
+			}
+			#left
+			{	
+				background-color:#1a2930;
+				color:#aaaaaa;
+				order:1;
+				font-family: "Georgia";
+				font-size: 1.5rem;
+			}
+			#ach
+			{
+				padding: 3.5rem 1.75rem 3.5rem 1.75rem;
+			}
+			
+			#ach ul
+			{
+				list-style-type: none;
+				line-height: normal;
+			}
+			h3{
+				margin-top: 3rem;
+				margin-bottom: 1rem;
+			}
+			#right
+			{
+				
+				order:0;
+				background-color:#266da8;
+				color:#cdcdc0;
+				font-size: 2.5rem;
+				padding-bottom: 1.5rem; 
+			}
+
+			#links
+			{
+				list-style-type:none;
+				float:right;
+				text-align:right;
+				font-family:"Arvo","Papyrus";
+			}
+			#links li
+			{
+				float:left;
+				margin-right: 1.5rem;
+				font-size: 1.5rem;
+			}
+			a
+			{
+				color:#dddddd;
+				text-decoration :none;
+			}
+			a:hover
+			{
+				text-decoration:underline;
+
+			}
+			
+			#rightMain
+			{
+				font-family:"Arvo";
+				word-spacing: 0.5rem;
+			}
+			#rightMain::after
+			{
+				content:'|';
+				animation:  blink 0.8s ease infinite;
+			}
+			#content
+			{
+				padding: 3.5rem 2.25rem 3.5rem 2.25rem;
+				
+			}
+			#about
+			{
+				font-family:"Arvo";
+				font-size: 0rem;
+				line-height: 3rem;
+				text-align: justify;
+				
+				opacity:0;
+				transition: font-size 0.3s,opacity:0.35s;
+			}
+			#about ul li
+			{
+				font-family:"Monotype Corsiva";
+				list-style-type: none;
+				margin-right: 2rem;
+				float:left;
+				
+			}
+			#about ul li a
+			{
+				list-style-type: none;
+			}
+			
+			#about p a
+			{
+				color:#cdcdc0; 
+				text-decoration:none;
+			}
+			#about p a:hover
+			{
+				text-decoration:underline;	
+			}
+			@keyframes blink
+			{
+				0%{
+					opacity:0;
+				}
+				50%{
+					opacity:1;
+				}
+				100%{
+					opacity:0;
+				}
+			}
+			#outerTH
+			{
+				position: fixed;
+			    bottom: 3.5rem;
+			    right: 3.5rem;
+			    display: inline-block;
+				opacity:1;
+
+			}
+			#tetrahederon{
+				width:7rem;
+				height:7rem;
+				transform-style: preserve-3d;
+				animation:spinTetrahederon 4s ease infinite alternate;
+			}
+			@keyframes spinTetrahederon
+			{
+				from{
+					transform: rotateY(0deg);
+				}
+				to{
+					transform:rotateY(360deg);
+				}
+			}
+			.face{
+				position:absolute;
+				width:0rem;
+				height:0rem;
+				opacity:0.5;
+				
+				border-radius: 5%;
+				border:2px solid transparent;
+
+				border-left:3.5rem solid transparent;
+				border-right:3.5rem solid transparent;
+				border-bottom:7rem solid;
+			}
+			.fir{
+				transform-origin:bottom;
+				transform: rotateX(-30deg);
+
+			}
+			.sec{
+				transform-origin: bottom;
+				transform:rotateX(30deg);
+			}
+			.thi{
+				transform-origin: top;
+				transform:rotateZ(180deg) translateY(-7rem) rotateY(90deg) translateZ(-3.5rem) rotateX(30deg);
+			}
+			.fou{
+				transform-origin: top;
+				transform:rotateZ(180deg) translateY(-7rem) rotateY(-90deg) translateZ(-3.5rem) rotateX(30deg);
+			}
+			.footer
+			{
+				order:3;
+				font-family: "Arvo";
+    			font-size: 1.2rem;
+    			width: 100%;
+    			background-color:#1a2930;
+    			color: lightgray;
+    			text-align: center;
+			}
+			footer p
+			{
+				text-align:center;
+			}
+			
+			@media screen and (min-width:500px){
+
+				html{
+					font-size: 24px;
+				}
+				#ach
+				{
+					padding: 5rem 5rem 5rem 5rem;
+					
+				}
+				#content
+				{
+					padding: 5rem 5rem 5rem 5rem;
+					
+				}
+
+			}
+
+			@media screen and (min-width: 1100px) {
+				html{
+					font-size: 16px;
+				}
+				#outer{
+
+					flex-direction: row;
+					position: fixed;
+					width: 100%;
+	    			height: 100%;
+	   				top: 0;
+	    			left: 0;
+	    			bottom: 0;
+	    			right:0;
+
+				}
+				.header
+				{
+					position:fixed;
+					width:100%;
+					height:7%;
+					background-color:transparent;
+				}
+				#left{
+					order:0;
+					float:left;
+					width:20%;
+					height:100%;
+					font-family:"Cambria";
+					font-size: 1.2rem;
+
+				}
+				#ach
+				{
+					margin-top: 6rem;
+					margin-left:1rem;
+					margin-right:2rem;
+					opacity:0;
+					padding: 0 0 0 0;
+					color:#aaaaaa;
+					animation-name:slide;
+					animation-play-state: paused;
+					animation-duration: 1s;
+					transition: margin-top 1s;
+					
+				}
+				h3
+				{
+					margin-top: 30px;
+					margin-bottom: 5px;
+				}
+				
+				@keyframes slide
+				{
+					0%{
+						margin-top: 65rem;
+					}
+					60%{
+						margin-top: 5rem;
+					}
+					90%{
+						margin-top:7.75rem;
+					}
+					100%{
+						margin-top: 6rem;
+					}
+
+				}
+				
+				#right{
+					order: 0;
+					float: right;
+					width:80%;
+					height:100%;
+				}
+				#content{
+					padding:7rem 10rem 0rem 10rem;
+				}
+				#rightMain{
+					font-size: 3rem;
+				}
+				#about
+				{
+					line-height: 2.5rem;
+					margin-top: 4rem;
+					opacity:0;
+					transition: font-size 0.4s,opacity 1s,margin-top 2s;
+				    right: 70px;
+				    
+				}
+				#github
+				{
+					background-image:url("GitHub-Mark-Light-32px.png");
+				}
+				#tetrahederon{
+					width:100px;
+					height:100px;
+				}
+				.face{
+					border-left:50px solid transparent;
+					border-right:50px solid transparent;
+					border-bottom:100px solid;
+				}
+				.thi{
+					transform-origin: top;
+					transform:rotateZ(180deg) translateY(-100px) rotateY(90deg) translateZ(-50px) rotateX(30deg);
+
+				}
+				.fou{
+					transform-origin: top;
+					transform:rotateZ(180deg) translateY(-100px) rotateY(-90deg) translateZ(-50px) rotateX(30deg);
+				}
+				.footer{
+					position:fixed;
+					width:100%;
+					height:5%;
+					bottom: 1rem;
+					
+					background-color: transparent;
+				}
+				@media screen and (min-width: 1400px){
+					html{
+						font-size:18px;
+					}
+					#left{
+						width:22%;
+					}
+					#right{
+						width:78%;
+					}
+				}
+				
+			}
+			
+
+			
+
+			
+		</style>
+			
+
+
+		
+			
+	</head>
+
+	<body>
+		<div id="outer">
+			<header class="header">
+				<ul id="links">
+					<li><a href="resume.pdf">Resume</a></li>
+				</ul>
+			</header>
+			<div id="left" class="col">
+				<div id="ach">
+					<h3>Skills</h3>
+					<ul>
+						<li>C, C++, Python, Java</li>
+
+						<li>HTML, CSS, JavaScript, Flask</li>
+
+					</ul>
+					<h3>Familiar with</h3>
+					<ul>
+						<li>Android Development</li>
+						<li>Computer Vision</li>
+					</ul>
+					<h3>Interests</h3>
+					<ul>
+						<li>Machine Learning</li>
+						<li>Data Structures & Algorithms</li>
+						
+
+					</ul>
+				</div>
+			</div>
+			
+			<div id="right" class="col">
+				
+			
+				<div id="content">
+
+					<div id="rightMain"></div>								
+					<div id="about">
+						<p>I am an undergraduate at 
+							<a href="http://www.iiitkalyani.ac.in" target="_blank"><b>Indian Institute of Information Technology, Kalyani</b></a>
+							pursuing my major in Computer Science and Engineering.
+						<br>
+							I like to contribute towards develeopment of technology and enjoy being part of it. 
+						</p>
+						<ul>
+							<li><a href="http://www.github.com/anishk74" target="_blank">GitHub</a></li>
+							<li><a href="https://www.quora.com/profile/Anish-Kumar-Kharwar" target="_blank">Quora</a></li>
+							
+						</ul>
+					</div>
+					
+				</div>
+				
+				<div id="outerTH">
+
+					<div id="tetrahederon">
+						<div class="face fir"></div>
+						<div class="face sec"></div>
+						<div class="face thi"></div>
+						<div class="face fou"></div>
+					</div>
+				</div>
+				
+
+			</div>
+
+			<div class="footer">
+				<p>Designed and Created by <a href="#" style="text-decoration:none; color:lightgray;">Anish</a></p>
+          		<p>Copyright 2019 &#169; </p>
+       		 </div>
+		</div>
+		
+		<script>
+			function showTH(){
+				
+				document.getElementById("outerTH").style.opacity=0.5;
+			};
+			var s=["Hi, I\'m a Web Designer"," a Programmer"," Anish Kharwar"];
+			
+		    var write=1;
+		    var index=0;
+		    var j=0;
+		    var addDelay=70;
+		    var deleteDelay=40;
+		    window.onload = function typeWriter(){
+		    	
+				if(write==1)
+				{
+					document.getElementById("rightMain").innerHTML+=s[index][j];
+					j++;
+					
+
+					if(j==s[index].length)
+					{
+						write=0;
+						if(index==s.length-1)
+						{
+							setTimeout(function(){
+								//for right>content>about appearence 
+								
+								document.getElementById("about").style.fontSize="1.75rem";
+								setTimeout(function(){
+									
+									
+									document.getElementById("ach").style.animationPlayState="running";
+									document.getElementById("ach").style.opacity=1;
+								
+									
+								},0);
+								setTimeout(function(){
+									document.getElementById("about").style.opacity="1";
+									document.getElementById("about").style.marginTop="0rem";
+									
+									document.getElementById("left").style.height="auto";
+								},420);
+							},250);
+							return;
+						}
+						j+=7;
+						setTimeout(typeWriter,addDelay+1000);
+					}
+					else if(s[index][j-1]==',')
+						setTimeout(typeWriter,addDelay+1000);
+					else
+						setTimeout(typeWriter,addDelay);
+				}
+				
+				else if(write==0)
+				{
+					
+					x=document.getElementById('rightMain').innerHTML;
+					document.getElementById('rightMain').innerHTML=x.slice(0,j);
+					j--;
+					if(j==7)
+					{
+						write=1;
+						index++;
+						j=0;
+						setTimeout(typeWriter, deleteDelay+150);
+					}
+					else
+						setTimeout(typeWriter, deleteDelay);
+				}
+			};
+		</script>
+	</body>
+
+</html>
