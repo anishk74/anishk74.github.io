@@ -440,10 +440,8 @@
 		</div>
 		
 		<script>
-			function showTH(){
-				
-				document.getElementById("outerTH").style.opacity=0.5;
-			};
+			if(screen.width<500)
+				document.getElementById("outerTH").style.visibility="hidden";
 			var s=["Hi, I\'m a Web Designer"," a Programmer"," Anish Kharwar"];
 			
 		    var write=1;
