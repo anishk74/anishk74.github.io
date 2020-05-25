@@ -157,10 +157,11 @@
 			
 			.cpicons {
 				
-			  	display:none;
+			  	display:flex;
+			  	visibility: hidden;
 			  	height:2.5rem;
-			  	width:2.5rem;
-			  	transition:padding 0.3s;
+			  	width:0rem;
+			  	transition:padding 0.3s,visibility 0.03s,width 0.3s;
 			}
 			.cpicons:after{
 
@@ -178,12 +179,13 @@
 			.cpouter:hover{
 				background-color: #fff0f5;
 				
-				transition: background-color 0.5s;
+				transition: background-color 0.2s;
 			}
 			.cpouter:hover .cpicons {
-
+				width:2.5rem;
+				visibility:visible;
 			  	padding: 0 0.5rem;
-				display:flex;
+				
 				
 				
 			}
