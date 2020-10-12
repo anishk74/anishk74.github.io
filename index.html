@@ -21,6 +21,7 @@
 			.header
 			{
 				background-color:#266da8;
+
 			}
 			#left
 			{	
@@ -59,6 +60,7 @@
 
 			#links
 			{
+				margin-top: 2rem;
 				list-style-type:none;
 				float:right;
 				text-align:right;
@@ -93,14 +95,14 @@
 			}
 			#content
 			{
-				padding: 3.5rem 2.25rem 1.5rem 2.25rem;
+				padding: 1.5rem 2.25rem;
 				
 			}
 			#about
 			{
 				font-family:"Arvo";
 				font-size: 0rem;
-				line-height: 3rem;
+				line-height: 2.25rem;
 				text-align: justify;
 				
 				opacity:0;
@@ -141,7 +143,7 @@
 			}
 			.plat-links{
 				padding:0.5rem;
-				margin-right: 2rem;
+				margin:0 1rem;
 				
 			}
 			.cpouter{
@@ -163,12 +165,7 @@
 			  	width:0rem;
 			  	transition:padding 0.3s,visibility 0.03s,width 0.3s;
 			}
-			.cpicons:after{
-
-				
-
-
-			}
+			
 			.cptext{
 				margin-right:0.5rem;
 				
@@ -318,10 +315,14 @@
 				}
 				.header
 				{
+
 					position:fixed;
 					width:100%;
 					height:7%;
 					background-color:transparent;
+				}
+				.header #links{
+					margin-right: 2rem;
 				}
 				#left{
 					order:0;
@@ -458,26 +459,24 @@
 				<div id="ach">
 					<h3>Skills</h3>
 					<ul>
-						<li>C, C++, Python, Java</li>
-						<li>MATLAB, Octave</li>
-						<li>HTML, CSS, JavaScript, Flask</li>
-						<li>MySQL, Firebase</li>
-						
-
+						<li>Python, C++, C</li>
+						<li>HTML, CSS, JavaScript</li>
+						<li>MATLAB/Octave</li>
+						<li>SQL, Firebase</li>
+					</ul>
+					<h3>Interests</h3>
+					<ul>
+						<li>Computer Vision</li>
+						<li>Machine Learning</li>
+						<li>Data Structures</li>
+						<li>Algorithms</li>
 					</ul>
 					<h3>Familiar with</h3>
 					<ul>
 						<li>Android Development</li>
-						
+						<li>Web Development</li>
 					</ul>
-					<h3>Interests</h3>
-					<ul>
-						<li>Machine Learning</li>
-						<li>Data Structures & Algorithms</li>
-						<li>Computer Vision</li>
-						
-
-					</ul>
+					
 				</div>
 			</div>
 			
@@ -489,16 +488,14 @@
 					<div id="rightMain"></div>								
 					<div id="about">
 						<p>I am an undergraduate at 
-							<a href="http://www.iiitkalyani.ac.in" target="_blank"><b>Indian Institute of Information Technology, Kalyani</b></a>
+							<a href="http://www.iiitkalyani.ac.in" target="_blank"><b>Indian Institute of Information Technology Kalyani</b></a>
 							pursuing my major in Computer Science and Engineering.
 						<br>
 							I like working on real-world problems using Machine Learning besides designing cool stuff.
 						</p>
 						<div id="cp-menu">
 						
-							<div class="plat-links"><a href="http://www.github.com/anishk74" target="_blank">GitHub</a></div>
-							<div class="plat-links"><a href="https://www.quora.com/profile/Anish-Kumar-Kharwar" target="_blank">Quora</a></div>
-							
+							<div class="plat-links"><a href="http://www.github.com/anishk74" target="_blank">GitHub</a></div>							
 								<div class="plat-links cpouter">
 									<div class="cptext">CP</div>
 									<div class="cpicons">
@@ -668,9 +665,7 @@
 											</svg>
 										</a>
 									</div>
-									
 								</div>
-							
 						</div>
 					</div>
 					
@@ -701,13 +696,14 @@
 		<script>
 			if(screen.width<500)
 				document.getElementById("outerTH").style.visibility="hidden";
-			var s=["Hi, I\'m a Programmer"," ML Enthusiast"," Anish Kharwar"];
+			var s=["Hi, I\'m a Programmer"," ML Enthusiast"," Anish Kharwar"]
+			
 			
 		    var write=1;
 		    var index=0;
 		    var j=0;
 		    var addDelay=60;
-		    var deleteDelay=35;
+		    var deleteDelay=30;
 		    window.onload = function typeWriter(){
 		    	
 				if(write==1)
@@ -723,9 +719,9 @@
 						{
 							setTimeout(function(){
 								//for right>content>about appearence 
-								var rightDelay=900;
-								if(innerWidth<1100){
-									rightDelay=300;
+								var rightDelay=300;
+								if(innerWidth>=1100){
+									rightDelay=900;
 								}
 								setTimeout(function(){
 									
@@ -735,7 +731,10 @@
 								
 									
 								},0);
-								document.getElementById("about").style.fontSize="1.75rem";
+								var aboutSize="1.5rem";
+								if(innerWidth >= 1100)
+									aboutSize = "1.75rem";
+								document.getElementById("about").style.fontSize=aboutSize;
 								setTimeout(function(){
 									document.getElementById("about").style.opacity="1";
 									document.getElementById("about").style.marginTop="0rem";
@@ -756,7 +755,6 @@
 				
 				else if(write==0)
 				{
-					
 					x=document.getElementById('rightMain').innerHTML;
 					document.getElementById('rightMain').innerHTML=x.slice(0,j);
 					j--;
@@ -765,7 +763,7 @@
 						write=1;
 						index++;
 						j=0;
-						setTimeout(typeWriter, deleteDelay+400);
+						setTimeout(typeWriter, deleteDelay+200);
 					}
 					else
 						setTimeout(typeWriter, deleteDelay);
